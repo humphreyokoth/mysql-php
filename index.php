@@ -11,16 +11,26 @@
 </head>
 
 <body>
-    <?php
-
-    require_once("./introphp.php");    
-    ?>
+  <?php require_once("./introphp.php");  ?>
    <?php 
     include './db_connnection.php';
-    $conn = OpenCon();
-    echo 'Connect Successfully';
-    CloseCon($conn);
-     ?>
+
+?>
+<?php   
+  $conn = OpenCon();
+   // echo 'Connect Successfully';
+    //CloseCon($conn);
+   $sql = " SELECT * FROM wp_course";
+   //SELECT * FROM wp_course;
+   $result = $conn->query($sql);
+   if($result-> num_rows>0){
+    echo "id:".$row["id"]."-Title:".$row["title"]."-Date:".$row["data_added"].
+    "<br>";
+   }else{
+    echo "0 results";
+   }
+  $conn->close();
+  ?>
     <div class="container">
         <form action="index.php" method="post" class="addTask" id="addForm" name="todoList">
             <div class="row">
