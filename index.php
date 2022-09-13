@@ -11,8 +11,8 @@
 </head>
 
 <body>
-  <?php require_once("./introphp.php");  ?>
-   <?php 
+  <?php require_once("./introphp.php");  
+
     include './db_connnection.php';
 
 ?>
@@ -37,7 +37,7 @@
    }else {
      echo 'ERROR:Could not execute $sql.';
    }
-   $conn->close();
+//    $conn->close();
   ?>
 
     <div class="container">
