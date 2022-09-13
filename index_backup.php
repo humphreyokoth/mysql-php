@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,24 +14,28 @@
 <body>
     <?php
     require_once("./introphp.php");
-    include ('./db_connnection.php');
+    include ('db_connnection.php');
+    ?>
+    <?php
     $conn = OpenCon();
-   // Checking form with input.
-    $input = isset($_POST["item"])?$_POST["item"]:null;
-    error_log($input."\n",3,"./php_error.log");
-    
-    // Inserting items into my todolist table in the database.
-    // $sql = "INSERT INTO to_do_list_items(`title`) VALUES ('$input')";
    
-    // $result = $conn->query($sql);
-    // var_dump($result);
-    // error_log($result."\n",3,"./php_error.log");
+    $sql = " SELECT * FROM to_do_list_items";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        echo "id:" . $row["id"] . "-Title:" . $row["title"] . "-Date:" . $row["data_added"] .
+            "<br>";
+    } else {
+        echo "0 results";
+    }
 
-    // if ($result) {
-    //     echo ' successful.';
-    // } else {
-    //     echo 'ERROR:'.$sql.'\n'. $conn->close();
-    // }
+    $sql = "INSERT INTO to_do_list_items(title,date_added,type) VALUES ('Todo',now,'type')";
+    //$result = $conn->query($sql);
+    if ($result) {
+        echo 'Records inserted successfully.';
+    } else {
+        echo 'ERROR:Could not execute $sql.';
+    }
+    //    $conn->close();
     ?>
 
     <div class="container">
@@ -79,9 +80,6 @@
                             <i class="fa-solid fa-trash-can deleteIcon"></i>
 
                             <i class="fa-solid fa-pencil editIcon "></i>
-                            <!-- <?php echo  $row["date_added"] ?> -->
-                            
-                           
 
                         </li>
                     <?php } ?>
