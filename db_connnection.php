@@ -1,8 +1,8 @@
 <?php 
 function OpenCon(){
     $dbhost = "localhost";
-    $dbuser = "humphrey";
-    $dbpass = "test";
+    $dbuser = "root";
+    $dbpass = "";
     $db = "wp_course";
     $conn = new mysqli($dbhost,$dbuser,$dbpass,$db) or die ("connectfailed:%s\n".$conn->error);
     return $conn;

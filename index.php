@@ -21,7 +21,7 @@
    // echo 'Connect Successfully';
     //CloseCon($conn);
    $sql = " SELECT * FROM wp_course";
-   //SELECT * FROM wp_course;
+    "SELECT * FROM wp_course";
    $result = $conn->query($sql);
    if($result-> num_rows>0){
     echo "id:".$row["id"]."-Title:".$row["title"]."-Date:".$row["data_added"].
@@ -30,6 +30,17 @@
     echo "0 results";
    }
   $conn->close();
+  ?>
+  <?php 
+  $sql = "INSERT INTO to_do_list_items(title,date_added,type) VALUES ('Todo',now,'type')";
+  $result = $conn->query($sql);
+  if($result){
+    echo 'Records inserted successfully.';
+  }else {
+    echo 'ERROR:Could not execute $sql.';
+  }
+  $conn->close();
+  
   ?>
     <div class="container">
         <form action="index.php" method="post" class="addTask" id="addForm" name="todoList">
