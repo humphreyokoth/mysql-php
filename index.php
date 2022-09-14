@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,8 +17,8 @@
     include ('./db_connnection.php');
     $conn = OpenCon();
    // Checking form with input.
-    $input = isset($_POST["item"])?$_POST["item"]:null;
-    error_log($input."\n",3,"./php_error.log");
+    // $input = isset($_POST["item"])?$_POST["item"]:null;
+    //error_log($input."\n",3,"./php_error.log");
     
     // Inserting items into my todolist table in the database.
     // $sql = "INSERT INTO to_do_list_items(`title`) VALUES ('$input')";
@@ -36,6 +33,9 @@
     //     echo 'ERROR:'.$sql.'\n'. $conn->close();
     // }
     ?>
+    <?php
+include 'addTodos.php';
+?>
 
     <div class="container">
         <form action="index.php" method="post" class="addTask" id="addForm" name="todoList">
