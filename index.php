@@ -16,8 +16,8 @@
     require_once("./introphp.php");
     include 'addTodos.php';
     ?>
-   
-   <div class="container">
+
+    <div class="container">
         <form method="post" class="addTask" id="addForm" name="todoList">
             <div class="row">
                 <div class="col-1">
@@ -47,13 +47,9 @@
             <div class="list" id="list">
 
                 <ul class="list-li" id="task">
-
-
-
                     <?php
                     $list = todo();
                     foreach ($list as $key => $item) { ?>
-
                         <li>
                             <input type="checkbox" name="checkbox" id="list-1" />
 
