@@ -14,32 +14,10 @@
 <body>
     <?php
     require_once("./introphp.php");
-    // include('./db_connnection.php');
-    // $conn = OpenCon();
-    //    // Checking form with input.
-    //     $input = isset($_POST["item"])?$_POST["item"]:null;
-    //     error_log($input."\n",3,"./php_error.log");
-
-    //     //Inserting items into my todolist table in the database.
-    //     $sql = "INSERT INTO to_do_list_items(`title`) VALUES ('$input')";
-
-    //     $result = $conn->query($sql);
-    //     var_dump($result);
-    //     error_log($result."\n",3,"./php_error.log");
-
-    //     if ($result) {
-    //         echo ' successful.';
-    //     } else {
-    //         echo 'ERROR:'.$sql.'\n'. $conn->close();
-    //     }
-    //     
-    ?>
-    <?php
     include 'addTodos.php';
-    // include 'getTodos.php';
     ?>
-
-    <div class="container">
+   
+   <div class="container">
         <form method="post" class="addTask" id="addForm" name="todoList">
             <div class="row">
                 <div class="col-1">
@@ -73,7 +51,7 @@
 
 
                     <?php
-                    $list = todo();                
+                    $list = todo();
                     foreach ($list as $key => $item) { ?>
 
                         <li>
@@ -83,7 +61,7 @@
                             <i class="fa-solid fa-trash-can deleteIcon"></i>
 
                             <i class="fa-solid fa-pencil editIcon "></i>
-                           
+
                         </li>
                     <?php } ?>
                 </ul>
