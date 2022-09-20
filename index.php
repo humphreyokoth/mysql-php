@@ -48,8 +48,9 @@
 
                 <ul class="list-li" id="task">
                     <?php
-                    $list = todo();
-                    foreach ($list as $key => $item) { ?>
+                   // $list = todo();
+                   if (is_array($to_do_item) || is_object($to_do_item)){
+                    foreach ($to_do_item as $key => $item) { ?>
                         <li>
                             <input type="checkbox" name="checkbox" id="list-1" />
 
@@ -59,7 +60,7 @@
                             <i class="fa-solid fa-pencil editIcon "></i>
 
                         </li>
-                    <?php } ?>
+                    <?php } }?>
                 </ul>
             </div>
 
@@ -68,7 +69,7 @@
 
     </div>
 
-</body>
+
 </body>
 
 </html>
