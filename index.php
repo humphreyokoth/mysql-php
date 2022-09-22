@@ -48,7 +48,7 @@
 
                 <ul class="list-li" id="task">
                     <?php
-                    $list = todo();
+                   // $list = todo();
                     foreach ($list as $key => $item) { ?>
                         <li>
                             <input type="checkbox" name="checkbox" id="list-1" />

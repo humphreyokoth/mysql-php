@@ -1,5 +1,6 @@
     <?php
     include('./db_connnection.php');
+    // Opening db connection.
     $conn = OpenCon();
     //Add to list items to DB
     $to_do_item = isset($_POST["item"]) ? $_POST["item"] : null;
